@@ -1,0 +1,83 @@
+<div class="cover" style="width:100%; height: 100vh; padding-top:20px; ">
+
+    <div class="recommend-box" style="margin: auto; height: 48px; margin-top: 10px; width: 90%; ">
+        <h2
+            style="padding: 9px 0; letter-spacing: 2PX; background-color: rgba(0, 128, 0, 0.567); width:100%; margin: auto; text-align: center; color:white">
+            ORDERS HISTORY</h2>
+    </div>
+
+    <div class="recommend-box"
+        style="margin: auto; height: 80vh; margin-top: 10px; width: 90%; padding: 20px; overflow: auto; ">
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <div *ngFor="let item of ordersList" class="col col-xl-2 col-lg-2 col-md-3 col-sm-4 col-xs-4"
+                    style="margin-bottom: 10px;">
+                    <br>
+                    <div class="card card-hover border border-dark"
+                        style="background-color: rgba(255, 255, 255, 0.838); color:black">
+
+                        <div class="card-header" style="text-align: center;">
+                            <h5>Order #{{item.orderNumber}}</h5>
+                        </div>
+
+                        <img class="card-img-top" [src]="item.imagePath" style="height: 150px">
+
+                        <div class="card-body" style="text-align: center;">
+                            <h4 class="card-title" style="color: green;">Product ID: {{item.productId}} </h4>
+                            <p class="card-text" align="left" *ngIf="(userType =='admin')"> User Id: {{item.userId}}
+                            </p>
+                            <p class="card-text" align="left"> Price: {{item.productPrict | currency: 'INR'}} </p>
+                            <p class="card-text" align="left"> Quantity: {{item.qty }} </p>
+                            <p class="card-text" align="left"> Total Price: {{item.totalPrice | currency: 'INR'}} </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- this.order = {
+    "orderNumber": this.orderNumber,
+    "userId": this.user.userId,
+    "productId": record.productId,
+    "qty": record.quantity ,
+    "productDescription": "Description",
+    "productPrict": record.productPrice,
+    "totalPrice": (record.productPrice * record.quantity),
+    "imagePath": record.imagePath
+  } -->
+
+<!-- <h2 style="text-align: center; color: green;"><u>ORDER DETAILS</u></h2><br>
+<div class="container">
+    <div class="container">
+        <table class="table table-bordered table-hover table-striped table-sm text-center">
+            <thead style="font-size: medium;">
+                <tr class="bg-success text-white">
+                    <th> Order Number </th>
+                    <th> User Id </th>
+                    <th> Product Id </th>
+                    <th> Price </th>
+                    <th> Quantity </th>
+                    <th> Total Cost </th>
+                    
+                </tr>
+            </thead>
+
+            <tbody style="font-size: small;">
+                <tr *ngFor="let item of ordersList">
+                    <td> {{item.orderNumber}} </td>
+                    <td> {{item.userId}} </td>
+                    <td> {{item.productId}} </td>
+                    <td> {{item.productPrict | currency: 'INR'}} </td>
+                    <td> {{item.qty}} </td>
+                    <td> {{item.totalPrice | currency: 'INR'}} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div> -->

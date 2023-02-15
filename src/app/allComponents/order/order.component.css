@@ -1,0 +1,35 @@
+  /*cover*/
+
+  .cover{
+    background-image: url(/assets/home-img/banner.jpg);
+    margin:0;
+    padding:0;
+   
+  }
+
+  .recommend-box{
+    background-color: rgba(245, 245, 220, 0.403);
+    border-radius: 2%;
+		box-shadow: 1px 1px 5px grey;
+    
+  }
+
+  .content{
+    width: 60%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10%;
+    
+    padding: 2%;
+  }
+
+  .card-hover:hover{
+    box-shadow: 0px 0px 20px 0px #888888; 
+    transform: scale(1.05);
+}
+
+.card {
+    box-shadow: 1px 1px 5px grey; 
+}

@@ -1,0 +1,34 @@
+{
+    "home":{
+        "title": "Welcome to Multi Language support website",
+        "heading": "Krishi Sathi",
+
+        "banner":{
+            "heading":"Krishi Sathi",
+            "paragraph": "Maximize your farm's potential with Krishi Sathi. A one-stop shop for all your agricultural needs, offering a range of quality seeds, equipment, fertilizers and more. Let our team of experts support you on your farming journey. Browse our collection, get expert advice, and start growing better today.",
+            "button":"Discover"
+        },
+
+        "hottest":{
+            "heading":"Sustainable Agriculture for a  Better Future",
+            "paragraph":"Welcome to the Krishi Sathi! Our mission is to empower farmers with the tools they need to grow healthy and bountiful crops. That's why we are dedicated to providing sustainable agriculture solutions that balance food production with environmental preservation. At Krishi Sathi, we believe that sustainable agriculture is the key to a better future. By adopting sustainable farming practices, farmers can improve their soil health, conserve water, protect biodiversity, reduce greenhouse gas emissions, and promote social equity. With a wide range of seeds, equipment, fertilizers, and other products, we make it easy for farmers to transition to sustainable agriculture. Join us in our mission to create a better future through sustainable agriculture. Explore our products today and start growing healthy, sustainable crops!"
+        },
+
+        "choose":{
+            "heading":"Why Choose Us?",
+            "paragraph":"At Krishi Sathi, we are dedicated to providing the best possible products and services to farmers. With years of experience in the agriculture industry and a passion for sustainable agriculture, we are committed to helping farmers grow healthy and bountiful crops. We understand the unique challenges that farmers face, and we are here to support them every step of the way. We provide",
+            
+            "choose-heading1":"Excellent Service",
+            "choose-paragraph1":"We offer a wide range of products, expert advice, and personalized support for farmers.",
+            "choose-heading2":"Clean Working",
+            "choose-paragraph2":"We promote sustainability through our clean working practices and environmentally-friendly products.",
+            "choose-heading3":"Quality And Reliability",
+            "choose-paragraph3":"We provide high-quality and reliable products that meet the highest standards of quality.",
+            "choose-heading4":"Expert Farmer",
+            "choose-paragraph4":"Our team of expert farmers and agronomists are dedicated to helping farmers transition to sustainable agriculture.",
+            "button":"Read More"
+        }
+    }
+
+    
+}

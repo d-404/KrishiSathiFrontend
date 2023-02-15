@@ -1,0 +1,254 @@
+<!-- Address and payment component-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <title>Responsive Payment Gateway</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <h3 align="center" class="display-4 mb-5" style="color:rgb(54, 119, 37)">
+        <i>Payment Gateway</i>
+    </h3>
+    <header>
+        <div class="container-fluid">
+            <div>
+            </div>
+            <div class="left">
+                <br>
+                <h3 style="text-align: center; color: white; font-style: oblique;"><b>Delivery Address</b></h3>
+                <form #registerForm="ngForm" (ngSubmit)="deliveryAddress(registerForm.value)">
+                    <br>
+                    <p style="color: whitesmoke;"><b>Contact Info</b></p>
+                    <div>
+                        <input type="text" class="form-control bg-light border-0 " name="fullName"
+                            placeholder="Enter full name" ngModel required minlength="3" maxlength="20"
+                            pattern="[a-zA-Z ]+" #fullName="ngModel" />
+                    </div>
+
+                    <div>
+                        <input type="text" class="form-control bg-light border-0 " name="emailId"
+                            placeholder="Enter email Id" ngModel required minlength="3" maxlength="20"
+                            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" #emailId="ngModel" />
+                    </div>
+
+                    <div>
+                        <input type="number" class="form-control bg-light border-0 " name="mobileNumber"
+                            placeholder="Enter mobile number" ngModel required minlength="3" maxlength="13"
+                            pattern="[0-9]+" #mobileNumber="ngModel" />
+                    </div>
+                    <br>
+
+                    <p style="color: whitesmoke;"><b>Address Info</b></p>
+                    <div style="display: inline-block; margin-right: 10px;">
+                        <input class="form-check-input" type="radio" name="addressType" id="Home" value="Home"  >
+                        <p style="color: whitesmoke;" for="Home">Home &nbsp; &nbsp; &nbsp; &nbsp;</p>
+                    </div>
+
+                    <div style="display: inline-block;">
+                        <input class="form-check-input" type="radio" name="addressType" id="Office" value="Office" >
+                        <p style="color: whitesmoke;" for="Office">Office &nbsp; &nbsp; &nbsp; &nbsp;</p>
+                    </div>
+
+                    <div style="display: inline-block;">
+                        <input class="form-check-input" type="radio" name="addressType" id="Other" value="Other" >
+                        <p style="color: whitesmoke;" for="Other">Other</p>
+                    </div>
+                  
+                    <input type="text" class="form-control bg-light border-0 " name="flatAddress"
+                        placeholder="Flat no/Area/Street " ngModel required minlength="3" maxlength="40"
+                        pattern="[a-zA-Z0-9,-/ ]+" #flatAddress="ngModel" />
+
+                    <input type="text" class="form-control bg-light border-0 " name="city" placeholder="Enter city" required
+                        minlength="3" maxlength="40" pattern="[a-zA-Z ]+" #city="">
+                        
+                    <input type="tel" class="form-control bg-light border-0 " name="" placeholder=" Pin code" ngModel required minlength="3" maxlength="07"  #pinCode="ngModel">
+                    <div id="zip">
+                        <label>
+                            <select name="state" ngModel required style="width:161%" required  #state="ngModel">
+                                <option value=""> Select state </option>
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                <option value="Assam">Assam</option>
+                                <option value="Bihar">Bihar</option>
+                                <option value="Chhattisgarh">Chhattisgarh</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                <option value="Jharkhand">Jharkhand</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Kerala">Kerala</option>
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Manipur">Manipur</option>
+                                <option value="Meghalaya">Meghalaya</option>
+                                <option value="Mizoram">Mizoram</option>
+                                <option value="Nagaland">Nagaland</option>
+                                <option value="Odisha">Odisha</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Sikkim">Sikkim</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="Telangana">Telangana</option>
+                                <option value="Tripura">Tripura</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Uttarakhand">Uttarakhand</option>
+                                <option value="West Bengal">West Bengal</option>
+                                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                <option value="Chandigarh">Chandigarh</option>
+                                <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and
+                                    Daman and Diu</option>
+                                <option value="Delhi">Delhi </option>
+                                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                <option value="Ladakh">Ladakh</option>
+                                <option value="Lakshadweep">Lakshadweep</option>
+                                <option value="Puducherry">Puducherry</option>
+                            </select>
+                        </label>
+                    </div>
+                    <br>
+                </form>
+                <div class="Button">
+                    <button class="btn btn-success py-3" type="submit" style="font-size: small;"
+                        (click)="showToasteraddressSuccess()"><i>&nbsp; &nbsp; &nbsp; &nbsp; Save address &nbsp;
+                            &nbsp; &nbsp; &nbsp; </i></button>
+                </div>
+
+                <div style="color:yellow; text-align:center">
+                    <div *ngIf="fullName.errors?.['required'] && fullName.touched"> Please Enter Data in fullName Feild</div>
+                    <div *ngIf="fullName.errors?.['minlength'] && fullName.touched"> Please Enter Valid fullName </div>
+                    <div *ngIf="fullName.errors?.['pattern'] && fullName.touched"> Please Enter Valid fullName </div>
+
+                    <div *ngIf="emailId.errors?.['required'] && emailId.touched"> Please Enter Valid Email Id</div>
+                    <div *ngIf="emailId.errors?.['minlength'] && emailId.touched"> Please Enter Valid Email Id</div>
+                    <div *ngIf="emailId.errors?.['pattern'] && emailId.touched"> Please Enter Valid Email Id</div>
+
+                    <div *ngIf="mobileNumber.errors?.['required'] && mobileNumber.touched"> Please Enter Data in mobileNumber Feild</div>
+                    <div *ngIf="mobileNumber.errors?.['minlength'] && mobileNumber.touched"> Please Enter Valid mobileNumber</div>
+                    <div *ngIf="mobileNumber.errors?.['pattern'] && mobileNumber.touched"> Please Enter Valid mobileNumber</div>
+
+                    <div *ngIf="flatAddress.errors?.['required'] && flatAddress.touched"> Please Enter Data in Flat address Feild</div>
+                    <div *ngIf="flatAddress.errors?.['minlength'] && flatAddress.touched"> Please Enter Valid Flat address</div>
+                    <div *ngIf="flatAddress.errors?.['pattern'] && flatAddress.touched"> Please Enter Valid Flat address</div>
+
+                    <div *ngIf="pinCode.errors?.['required'] && pinCode.touched"> Please Enter valid pinCode</div>
+                    <div *ngIf="pinCode.errors?.['minlength'] && pinCode.touched"> Please Enter Valid pinCode</div>
+                    <div *ngIf="pinCode.errors?.['pattern'] && pinCode.touched"> Please Enter Valid pinCode</div>
+
+                    <div *ngIf="state.errors?.['required'] && state.touched"> Please choose Data in state Feild</div> 
+                </div>
+
+            </div>
+            <!--Payment form starts here-->
+
+            <div class="right">
+                <br>
+                <h3 style="text-align: center; color:white; font-style: oblique;"><b>Payment</b></h3><br><br>
+                <div class="img">
+                    <img src="https://static.toiimg.com/thumb/msid-95415407,imgsize-11150,width-400,resizemode-4/95415407.jpg"
+                        alt="Payment Gateway Icon" width="95%" height="100px" style="align-items:center">
+                </div>
+                <form #regForm="ngForm" (ngSubmit)="payment(regForm.value)">
+                    <p style="color: whitesmoke;"><b>Card details</b></p>
+                    <div style="display: inline-block; margin-right: 10px;">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard"
+                            value="creditCard">
+                        <p style="color: whitesmoke;" for="creditCard">Credit Card &nbsp; &nbsp; &nbsp;</p>
+                    </div>
+
+                    <div style="display: inline-block;">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="debitCard"
+                            value="debitCard">
+                        <p style="color: whitesmoke;" for="debitCard">Debit Card &nbsp; &nbsp; &nbsp;</p>
+                    </div>
+                    <input type="tel" class="form-control bg-light border-0 " name="atmCardNum" placeholder="Enter card number"
+                            ngModel required minlength="4" maxlength="16" pattern="[0-9]+" #atmCardNum="ngModel" />
+
+                    <input type="text" class="form-control bg-light border-0 " name="cardHolderName" placeholder="Card holder's name"
+                            ngModel required minlength="3" maxlength="20" pattern="[a-zA-Z ]+" #cardHolderName="ngModel" />
+
+                    <input type="tel" class="form-control bg-light border-0 " name="cvv" placeholder="Enter CVV"
+                            ngModel required minlength="3" maxlength="3" pattern="[0-9]+" #cvv="ngModel" />
+
+                    <div id="zip">
+                        <label>
+                            <select style="width:200%" name="expMonth" ngModel  #expMonth="ngModel" >
+                                <option>Expiry month</option>
+                                <option value="01">01 (Jan)</option>
+                                <option value="02">02 (Feb)</option>
+                                <option value="03">03 (Mar)</option>
+                                <option value="04">04 (Apr)</option>
+                                <option value="05">05 (May)</option>
+                                <option value="06">06 (Jun)</option>
+                                <option value="07">07 (Jul)</option>
+                                <option value="08">08 (Aug)</option>
+                                <option value="09">09 (Sep)</option>
+                                <option value="10">10 (Oct)</option>
+                                <option value="11">11 (Nov)</option>
+                                <option value="12">12 (Dec)</option>
+
+                            </select>
+                        </label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;
+                        <label>
+
+                            <select style="width:201%" name="expYear" ngModel  #expYear="ngModel">
+                                <option>Expiry year</option>
+                                <option value="2024">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2026">2027</option>
+                                <option value="2026">2028</option>
+                                <option value="2026">2029</option>
+                            </select>
+                        </label>
+                    </div>
+                    <br>
+                </form>
+                <div class="Button">
+                    <button  class="btn btn-success py-3" type="submit" style="font-size: small;"
+                        (click)="showToasterPaymentSuccess()" ><i>&nbsp; &nbsp; &nbsp; &nbsp; Checkout &nbsp; &nbsp;
+                            &nbsp; &nbsp; </i></button>
+                </div>
+                <div style="color:yellow; text-align:center">
+                    <div *ngIf="atmCardNum.errors?.['required'] && atmCardNum.touched"> Please Enter Data in atmCardNum Feild</div>
+                    <div *ngIf="atmCardNum.errors?.['minlength'] && atmCardNum.touched"> Please Enter Valid atmCardNum </div>
+                    <div *ngIf="atmCardNum.errors?.['pattern'] && atmCardNum.touched"> Please Enter Valid atmCardNum </div>
+        
+                    <div *ngIf="cardHolderName.errors?.['required'] && cardHolderName.touched"> Please Enter Data in cardHolderName</div>
+                    <div *ngIf="cardHolderName.errors?.['minlength'] && cardHolderName.touched"> Please Enter Valid cardHolderName</div>
+                    <div *ngIf="cardHolderName.errors?.['pattern'] && cardHolderName.touched"> Please Enter Valid cardHolderName</div>
+        
+                    <div *ngIf="cvv.errors?.['required'] && cvv.touched"> Please Enter Data in cvv Feild</div>
+                    <div *ngIf="cvv.errors?.['minlength'] && cvv.touched"> Please Enter Valid cvv</div>
+                    <div *ngIf="cvv.errors?.['pattern'] && cvv.touched"> Please Enter Valid cvv</div>
+        
+                    <div *ngIf="expMonth.errors?.['required'] && expMonth.touched"> Please choose Data in expMonth Feild</div>
+        
+                    <div *ngIf="expYear.errors?.['required'] && expYear.touched"> Please choose Data in expYear Feild</div> 
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+</body>
+
+</html>

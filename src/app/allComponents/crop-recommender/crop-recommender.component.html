@@ -1,0 +1,169 @@
+<!-- <div class="cover" style="width:100%; height: 100vh; padding-top:100px; ">
+
+
+    <div class="recommend-box" style="margin: auto; height: 80vh; margin-top: 10%x; width: 60%; ">
+      <br>
+  
+      <div class="content">
+        <div *ngIf="!thankyou">
+          <br><br><br><br>
+          <button class="btn btn-warning" (click)="showStates()">Recommend Crops</button><br><br><br><br>
+        </div>
+  
+        <div *ngIf="thankyou" class="text-center mt-3 ">
+  
+          <div class="select-container">
+            <select (click)="showDistrict($any($event.target).value)" class="select">
+              <option *ngFor="let item of states">{{item}}</option>
+            </select><br>
+          </div>
+          <br>
+  
+          <div class="select-container">
+            <select (click)="showSeason($any($event.target).value)" class="select">
+              <option *ngFor="let item of districts">{{item}}</option>
+            </select><br>
+          </div>
+          <br>
+  
+          <div class="select-container">
+            <select (click)="showCrops($any($event.target).value)" class="select">
+              <option *ngFor="let item of seasons">{{item}}</option>
+            </select><br>
+          </div>
+          <br>
+  
+          <div class="select-container">
+            <select class="select">
+              <option *ngFor="let item of crops">{{item}}</option>
+            </select><br>
+          </div>
+          <br>
+  
+          <br>
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </div> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+    <!--Loader Div starts-->
+
+    
+    <!--Loader Div ends-->
+
+     <!-- Hero Section  -->
+    <section id="hero">
+      <div class="hero container" >
+        <div><br>
+          <h1>Crop <span></span></h1>
+          <h1>Recommendation <span></span></h1><br>
+          <button  class="btn btn-success" [disabled]="isDisabled" (click)="showStates()" *ngIf="!thankyou">
+            <span *ngIf="isDisabled"><div> Loading... &nbsp; <div class="loading " ></div> </div>
+            </span>
+            <div *ngIf="!isDisabled">Recommend Crops</div>
+          </button><br><br><br><br>
+
+          <div *ngIf="thankyou" class="recommend-box" style="margin: auto; height: 40vh; margin-top: 10%x; width: 60%; "><br><br>
+              <div *ngIf="thankyou" class="text-center mt-3 ">
+        
+                <div class="select-container" >
+                  <select (click)="showDistrict($any($event.target).value)" class="select" style="width: 200px; height: 25px;">
+                    <option value="">Select State</option>
+                    <option *ngFor="let item of states">{{item}}</option>
+                  </select><br>
+                </div>
+                <br>
+            
+                <div class="select-container">
+                  <select (click)="showSeason($any($event.target).value)" class="select" style="width: 200px; height: 25px;">
+                    <option value="">Select District</option>
+                    <option *ngFor="let item of districts">{{item}}</option>
+                  </select><br>
+                </div>
+                <br>
+            
+                <div class="select-container">
+                  <select (click)="showCrops($any($event.target).value)" class="select" style="width: 200px; height: 25px;">
+                    <option value="">Select Season</option>
+                    <option *ngFor="let item of seasons">{{item}}</option>
+                  </select><br>
+                </div>
+                <br>
+            
+                <button class="btn btn-success" (click)="submit()">Submit</button><br><br><br><br>
+                <br>
+            
+                <br>
+              </div>
+            </div>
+
+            <!-- <div  class="container" *ngIf="thankyou2">
+              <table class="table table-bordered table-hover table-striped table-sm text-center" align="center" style="width: 400px;">
+                <table class ="table table-striped table-hover" align="center" style="width: 300px; border: 2px solid black; background-color: white; border-radius: 6px;">
+                  <thead>
+                      <tr class = "btn-success" align="center" style="width: 300px;"> 
+                          <th style="font-size: 15px; text-align: center;">Crops</th>
+                      </tr>
+                  </thead>
+                  
+                  <tbody>
+                    <tr *ngFor="let item of crop_data">
+                        <td style="color: black; font-size: 10px;" align="center">{{item}}</td>
+                    </tr>
+                </tbody>
+              </table>
+          </div> -->
+            
+          <div class="row" *ngIf="thankyou2">
+            <div *ngFor="let item of crop_data" class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-6">
+              <br>
+                <div class="card" style="width:220px" style="background: linear-gradient(45deg,hsla(168, 85%, 52%, 0.5),hsla(168, 85%, 52%, 0.5) 100%);">
+                  <div class="card-body" style="text-align: center;">
+                    <h4 class="card-title" style="font-size: medium; color: white;"> {{item}} </h4>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+
+        </div>
+
+        
+      </div>
+      
+    </section>
+
+
+    
+    <!-- End Hero Section  -->
+    <script>
+      window.addEventListener("load", () => {
+        const button = document.querySelector(".btn btn-success");
+        button.setAttribute("disabled", "disabled");
+        setTimeout(() => {
+          button.removeAttribute("disabled");
+        }, 10000);
+      });
+    </script>
+</body>
+</html>
+
+         
+
+  
+
+  

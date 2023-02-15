@@ -1,0 +1,123 @@
+<div class="main">
+    <div style="display: flex; align-items: center;">
+        <h2
+            style="text-align: center; color: green; letter-spacing: 2px; font-size:x-large; margin-bottom: 20px; margin-left: 45%;">
+            <u>CATEGORIES</u>
+        </h2>
+        <button class="btn btn-success" style="margin-left: 29.5%; height: 1cm; font-size: small;" (click)="addCategory()" *ngIf="(user=='admin')">Add Category</button>
+    </div>
+    <div class="container">
+        <div class="row">
+
+            <div *ngFor="let item of categoryList" class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-6"
+                style="margin-bottom: 10px;">
+                <br>
+                <div class="card card-hover" style="height: 9cm;">
+
+                    <img class="card-img-top" src={{item.image}} style="height: 5cm">
+
+                    <div class="card-body" style="text-align: center;">
+                        <h4 class="card-title" style="color: green;">{{item.categoryName}}</h4>
+                        <p class="card-text" align="left" style="text-align: center;">{{item.categoryDescription}}</p>
+                        <br>
+                        <div style="display: flex; justify-content: center;">
+                            <button class="btn btn-success " style="display: flex;" (click)="showProducts(item)">View</button>
+                            &nbsp;&nbsp;
+                            <button class="btn btn-danger" style="display: flex;" (click)="deleteCategory(item)" *ngIf="(user=='admin')">Delete</button>
+                            &nbsp;&nbsp;
+                            <button class="btn btn-warning" style="display: flex;" (click)="editCategory(item)" *ngIf="(user=='admin')">Update</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Category -->
+    <div class="modal" id="updateModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Update Category</h4>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <table align="center">
+                        <tr>
+                            <td align="right"> Category Id: &nbsp;</td>
+                            <td align="left"><input type="number" name="categoryId" style="width: 200px;" [(ngModel)]="editObject.categoryId" readonly /></td>
+                        </tr>
+                        <br>
+                        <tr>
+                            <td align="right"> Category Name: &nbsp;</td>
+                            <td align="left"><input type="text" name="categoryName" style="width: 200px;" [(ngModel)]="editObject.categoryName" /></td>
+                        </tr>
+                        <br>
+                        <tr>
+                            <td align="right"> Category Description: &nbsp;</td>
+                            <td align="left"><input type="text" name="categoryDescription" style="width: 200px;" [(ngModel)]="editObject.categoryDescription" /></td>
+                        </tr>
+
+                    </table>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" (click)="updateCategory()" data-bs-dismiss="modal">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<!-- Add New Category -->
+<div class="modal" id="addModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title">Add Category</h4>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <table align="center">
+                    <tr>
+                        <td align="right"> Category Id: &nbsp;</td>
+                        <td align="left"><input type="number" name="categoryId" style="width: 200px;" [(ngModel)]="category.categoryId"></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td align="right"> Category Name: &nbsp;</td>
+                        <td align="left"><input type="text" name="categoryName" style="width: 200px;" [(ngModel)]="category.categoryName" /></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td align="right"> Category Description: &nbsp;</td>
+                        <td align="left"><input type="text" name="categoryDescription" style="width: 200px;" [(ngModel)]="category.categoryDescription" /></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td align="right"> Category Image: &nbsp;</td>
+                        <td align="left"><input type="text" name="categoryImage" style="width: 200px;" [(ngModel)]="category.image" /></td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" (click)="registerCategory()" data-bs-dismiss="modal">Add</button>
+            </div>
+        </div>
+    </div>
+</div>

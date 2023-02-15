@@ -1,0 +1,117 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
+/* .cover{
+    background-image: url(/assets/home-img/banner.jpg);
+    margin:0;
+    padding:0;
+   
+  }
+
+  .recommend-box{
+    background-color: rgba(245, 245, 220, 0.403);
+    border-radius: 2%;
+		box-shadow: 1px 1px 5px grey;
+    
+  }
+
+  .content{
+    width: 60%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10%;
+    
+    padding: 2%;
+  }
+
+  .select-container {
+    padding:4px 8px;
+    color:white;
+    font-size: 14px;
+    border: solid;
+    background-color: rgba(0, 128, 0, 0.174);
+    letter-spacing: 2px;
+  }
+  
+  .select {
+    padding: 5px;
+    font-size: 14px;
+    border: solid;
+    border-radius: 5px;
+    background-color: rgba(0, 128, 0, 0.789);
+    color:white;
+    animation: dropdown-animation 0.5s ease-in-out;
+  } */
+
+
+
+
+
+
+
+  /* Hero Section */
+
+  .recommend-box{
+    background-color: rgba(245, 245, 220, 0.403);
+    border-radius: 2%;
+		box-shadow: 1px 1px 5px grey;
+    
+  }
+
+#hero {
+	background-image: url(/assets/home-img/banner.jpg);
+	background-size: cover;
+	background-position: top center;
+	height: 1000px;
+	z-index: 1;
+}
+
+
+#hero .hero {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 50px;
+	justify-content: flex-start;
+}
+#hero h1 {
+	display: block;
+	width: fit-content;
+	font-size: 4rem;
+	position: relative;
+	color: transparent;
+	animation: text_reveal 0.5s ease forwards;
+	animation-delay: 1s;
+    color: white;
+}
+
+#hero h1 span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 0;
+	background-color: crimson;
+	animation: text_reveal_box 1s ease;
+	animation-delay: 0.5s;
+	
+}
+
+.loading {
+  border: 5px solid #f3f3f3; /* Light grey */
+  border-top: 5px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+  margin-right: 5px;
+  float: right;
+  
+  position: relative;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* End Hero Section */
+

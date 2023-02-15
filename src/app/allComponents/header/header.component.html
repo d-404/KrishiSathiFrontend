@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-success bg-gradient" style="height: 55px;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="assets/Images/3.png" style="height: 45px;"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+      aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="home" style="font-size: small;"><b>Home</b></a>
+        </li>&nbsp;
+
+        <li class="nav-item " *ngIf="!loginStatus">
+          <a class="nav-link active" style="font-size: small;" routerLink="login">Login</a>
+        </li>&nbsp;
+
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="register" style="font-size: small;" *ngIf="!loginStatus">Registration</a>
+        </li>&nbsp;
+
+        <li class="nav-item dropdown" *ngIf="loginStatus">
+          <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+            aria-expanded="false" style="font-size: small;">Dashboard</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" routerLink="profile" style="font-size: small;" *ngIf="loginStatus">Profile</a>
+            <a class="dropdown-item" style="font-size: small;" routerLink="order" *ngIf="loginStatus && userType == 'admin'">All Order History</a>
+            <a class="dropdown-item" style="font-size: small;" routerLink="order" *ngIf="loginStatus && userType == 'customer'">My Orders</a>
+            <a class="dropdown-item" routerLink="cart" style="font-size: small;" *ngIf="loginStatus && userType == 'customer'">My Cart</a>
+            <a class="dropdown-item" routerLink="AllCustomers" style="font-size: small;" *ngIf="loginStatus && userType == 'admin'">All Customers</a>
+          </div>
+        </li>&nbsp;
+
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="category" style="font-size: small;">Categories</a>
+        </li>&nbsp;
+
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="croprecommender" style="font-size: small;">Crop Recommender</a>
+        </li>&nbsp;
+
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="articles" style="font-size: small;">Articles</a>
+        </li>&nbsp;
+
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="contact" style="font-size: small;">Contact Us</a>
+        </li>&nbsp;
+
+        <li class="nav-item">
+          <a class="nav-link active" href="#" style="font-size: small;" *ngIf="loginStatus">Logout</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>

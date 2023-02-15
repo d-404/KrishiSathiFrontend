@@ -1,0 +1,100 @@
+<section class="h-100 h-custom" style="background-color: #8fc4b7;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-8 col-xl-6">
+                <div class="card rounded-3">
+
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
+                        class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+                        alt="Sample photo">
+
+                    <div class="card-body p-4 p-md-5">
+
+                        <h3>Registration Form</h3>
+
+                        <div *ngIf="!verifiedEmail">
+
+                            <div class="form-group">
+                                <label> Email </label>
+                                <div class="input-group has-validation">
+                                    <input type="text" [disabled]="otpStatus" [(ngModel)]="email" class="form-control">                          
+                                    <span class="input-group-text">@gmail.com</span>
+                                    <button [disabled]="otpStatus" (click)="sendOtp()" class="btn btn-primary ">Send
+                                        OTP</button>
+                                </div>
+                            </div>
+
+                            <div class="form-group" *ngIf="otpStatus">
+                                <label> OTP </label>
+                                <div class="input-group has-validation">
+                                    <input type="text" [(ngModel)]="userOtp" class="form-control">                       
+                                    <button [(ngModel)]="userOtp" (click)="verifyEmail()" class="btn btn-primary ">Verify
+                                        Email</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br>
+                        <form #RegistrationForm="ngForm" novalidate>
+                            <fieldset>
+
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input [disabled]="!verifiedEmail" type="text" class="form-control" name="name"
+                                        [(ngModel)]="person.userName">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1" class="form-label mt-3">Email address</label>
+                                    <input type="email" class="form-control" name="email" [(ngModel)]="person.email"
+                                        readonly>
+                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with
+                                        anyone else.</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleSelect1" class="form-label mt-4">Gender</label>
+                                    <select [disabled]="!verifiedEmail" class="form-select" name="gender"
+                                        [(ngModel)]="person.gender" required #gender="ngModel">
+                                        <option value="">Select Gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleSelect1" class="form-label mt-4">Date Of Birth</label>
+                                    <input [disabled]="!verifiedEmail" type="date" class="form-control" name="dob"
+                                        [(ngModel)]="person.dob" required #dob="ngModel">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
+                                    <input [disabled]="!verifiedEmail" type="password" placeholder="Enter Your Password"
+                                        class="form-control" name="password" [(ngModel)]="person.password" required
+                                        #password="ngModel">
+
+                                </div>
+                            </fieldset>
+                        </form>
+
+                        <button class="btn btn-primary btn-lg" [disabled]="!verifiedEmail || RegistrationForm.invalid"
+                            (click)="RegisterUser()">Register</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="color:red; text-align: center; font-size: 15px;">
+
+        <div *ngIf="gender.errors?.['required'] && gender.touched"> Please select your gender</div>
+
+        <div *ngIf="dob.errors?.['required'] && dob.touched"> Please Enter you DOB</div>
+
+        <div *ngIf="password.errors?.['required'] && password.touched"> Please enter your password</div>
+
+    </div>
+</section>

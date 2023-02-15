@@ -1,0 +1,88 @@
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="{{ user.photoUrl }}">
+                <span class="font-weight-bold"></span><span class="text-black-50"></span><span> </span></div>
+        </div>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right" style="color: green; font-size: medium"><i>My Profile</i></h4>
+                </div>
+                <div class="row mt-1">
+                    <div class="col-md-12"><label class="labels">Name</label><input type="text" class="form-control" placeholder="" value="{{ user.userName }}" style="font-size: small;" readonly></div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder="" value="{{ user.email }}" style="font-size: small;" readonly></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Gender</label><input type="text" class="form-control" placeholder="" value="{{ user.gender }}" style="font-size: small;" readonly></div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-12"><label class="labels">Date Of Birth</label><input type="text" class="form-control" placeholder="" value="{{ user.dob | date: 'dd-MMM-yyyy' }}" style="font-size: small;" readonly></div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-12"><label class="labels">Password</label><input type="password" class="form-control" placeholder="" value="{{ user.password }}" style="font-size: small;" readonly></div>
+                </div>
+
+                <div class="mt-5 text-center"><button class="btn btn-success profile-button" type="button" (click)="editProfile()">Edit Profile</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Edit Profile -->
+<div class="modal" id="updateProfile" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title">Update Profile</h4>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <table align="center">
+                    <tr>
+                        <td align="right"> User Id : &nbsp;</td>
+                        <td align="left"><input type="number" name="userId" style="width: 200px;" [(ngModel)]="user.userId" readonly/></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td align="right"> User Name : &nbsp;</td>
+                        <td align="left"><input type="text" name="userName" style="width: 200px;" [(ngModel)]="user.userName" /></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td align="right"> Email Id : &nbsp;</td>
+                        <td align="left"><input type="email" name="emailId" style="width: 200px;" [(ngModel)]="user.email" readonly/></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td align="right"> DOB : &nbsp;</td>
+                        <td align="left"><input type="date" name="dob" style="width: 200px;" [(ngModel)]="user.dob" /></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td align="right"> Gender : &nbsp;</td>
+                        <td align="left"><input type="text" name="gender" style="width: 200px;" [(ngModel)]="user.gender" /></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td align="right"> Password : &nbsp;</td>
+                        <td align="left"><input type="password" name="password" style="width: 200px;" [(ngModel)]="user.password" /></td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" (click)="updateProfile()" data-bs-dismiss="modal">Update</button>
+            </div>
+        </div>
+    </div>
+</div>

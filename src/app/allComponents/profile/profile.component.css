@@ -1,0 +1,34 @@
+.form-control:focus {
+    box-shadow: none;
+    border-color: green;
+    border-radius: 2px;
+}
+
+.profile-button {
+    background: green;
+    box-shadow: 2px;
+    border: none
+}
+
+.profile-button:hover {
+    background: green
+}
+
+.profile-button:focus {
+    background: green;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: green;
+    box-shadow: none
+}
+
+.back:hover {
+    color: green;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}

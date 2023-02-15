@@ -1,0 +1,310 @@
+<div class="select-container">
+   Language: &nbsp;
+   <select (click) ="selectLang($any($event.target).value)" class="select">
+       <option *ngFor="let item of supportLanguages">{{item}}</option>
+   </select>
+
+</div>
+<!-- <p>{{'home.title' | translate}}</p> -->
+ 
+ <!-- banner -->
+ <section class="banner_main">
+    <div class="container">
+       <div class="row">
+          <div class="col-md-12 ">
+             <div class="text-bg">
+                <!-- <h1>KRISHI SATHI</h1> -->
+                <h1>{{'home.banner.heading' | translate }}</h1>
+                <p>{{'home.banner.paragraph' | translate }}</p>
+                <a href="#">{{'home.banner.button' | translate }}</a>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+ <!-- end banner -->
+
+  <!-- three_box -->
+  <div class="three_box">
+    <div class="container">
+       <div class="row">
+          <div class="col-md-4">
+             <div class="box_text">
+                <figure><img src="/assets/home-img/img1.jpg" alt="#"/></figure>
+             </div>
+          </div>
+          <div class="col-md-4">
+             <div class="box_text">
+                <figure><img src="/assets/home-img/img2.jpg" alt="#"/></figure>
+             </div>
+          </div>
+          <div class="col-md-4">
+             <div class="box_text">
+                <figure><img src="/assets/home-img/img3.jpg" alt="#"/></figure>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+ <!-- three_box -->
+
+  <!-- hottest -->
+  <div  class="hottest">
+    <div class="container">
+       <div class="row d_flex">
+          <div class="col-md-5">
+             <div class="titlepage">
+                <h2>{{'home.hottest.heading' | translate}}</h2>
+             </div>
+          </div>
+          <div class="col-md-7">
+             <div class="hottest_box">
+                <p>{{'home.hottest.paragraph' | translate }}</p>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+ <!-- </div>
+ </div> -->
+ <!-- end hottest -->
+
+  <!-- choose  section -->
+  <div class="choose ">
+    <div class="container">
+       <div class="row">
+          <div class="col-md-8">
+             <div class="titlepage">
+                <h2>{{'home.choose.heading'| translate}} </h2>
+                <p>{{'home.choose.paragraph' | translate}}   </p>
+             </div>
+          </div>
+       </div>
+    </div>
+    <div class="container-fluid">
+       <div class="row d_flex">
+          <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
+             <div class="padding_with">
+                <div class="row">
+                   <div class="col-md-6 padding_bottom">
+                      <div class="choose_box">
+                         <i><img src="/assets/home-img/icon1.png" alt="#"/></i>
+                         <div class="choose_text">
+                            <h3>{{'home.choose.choose-heading1' | translate}}</h3>
+                            <p>{{'home.choose.choose-paragraph1' | translate}}</p>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="col-md-6 padding_bottom">
+                      <div class="choose_box">
+                         <i><img src="/assets/home-img/icon2.png" alt="#"/></i>
+                         <div class="choose_text">
+                            <h3>{{'home.choose.choose-heading2' | translate}}</h3>
+                            <p>{{'home.choose.choose-paragraph2' | translate}}</p>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="col-md-6 padding_bottom2">
+                      <div class="choose_box">
+                         <i><img src="/assets/home-img/icon3.png" alt="#"/></i>
+                         <div class="choose_text">
+                            <h3>{{'home.choose.choose-heading3' | translate}}</h3>
+                            <p>{{'home.choose.choose-paragraph3' | translate}}</p>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="col-md-6">
+                      <div class="choose_box">
+                         <i><img src="/assets/home-img/icon4.png" alt="#"/></i>
+                         <div class="choose_text">
+                            <h3>{{'home.choose.choose-heading4' | translate}}</h3>
+                            <p>{{'home.choose.choose-paragraph4' | translate}}</p>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">
+             <div class="choose_img">
+                <figure><img src="/assets/home-img/food.jpg" alt="#"/></figure>
+             </div>
+          </div>
+       </div>
+    </div>
+    <div class="container">
+       <div class="row">
+          <div class="col-md-5">
+            <br/>
+             <a class="read_more" href="#">{{'home.choose.button'|translate}}</a>
+          </div>
+       </div>
+    </div>
+ </div>
+ <!-- </div> -->
+ <!-- end choose  section -->
+
+  <!-- product  section -->
+  <br/><br/>
+  <div class="product">
+     <div class="container">
+        <div class="row">
+           <div class="col-md-6">
+              <div class="titlepage">
+                 <h2>Our Product</h2>
+              </div>
+           </div>
+        </div>
+     </div>
+     <div class="container-fluid">
+        <div class="row">
+           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 padding_left0">
+              <div class="product_box">
+                 <figure><img src="/assets/home-img/product1.jpg" alt="#"/></figure>
+                 <h3 class="black">vegetable</h3>
+              </div>
+           </div>
+           <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+              <div class="product_box">
+                 <figure><img src="/assets/home-img/product2.jpg" alt="#"/></figure>
+                 <h3 >weat</h3>
+              </div>
+           </div>
+           <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 padding_right0">
+              <div class="product_box">
+                 <figure><img src="/assets/home-img/product3.jpg" alt="#"/></figure>
+                 <h3>fruit</h3>
+              </div>
+           </div>
+           <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 padding_left0">
+              <div class="product_box">
+                 <figure><img src="/assets/home-img/product4.jpg" alt="#"/></figure>
+                 <h3>sunflowere</h3>
+              </div>
+           </div>
+           <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 padding_right0">
+              <div class="product_box">
+                 <figure><img src="/assets/home-img/product5.jpg" alt="#"/></figure>
+                 <h3>Livestock</h3>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+  <!-- end product  section -->
+
+   <!-- about -->
+ <div class="about">
+    <div class="container">
+       <div class="row">
+          <div class="col-md-12">
+             <div class="titlepage">
+                <h2>People Says About Krishi Sathi</h2>
+             </div>
+          </div>
+       </div>
+       <div class="row">
+          <div class="col-md-12">
+             <div id="myCarousel" class="carousel slide about_Carousel " data-bs-ride="carousel">
+
+                <div class="carousel-inner">
+                   <div class="carousel-item active">
+                      <div class="container">
+                         <div class="carousel-caption ">
+                            <div class="row">
+                               <div class="col-md-12">
+                                  <div class="test_box">
+                                     <i><img src="/assets/home-img/profile-icon.png" height="140px" width="140px" class="d-block w-100" alt="#"/></i>
+                                     <h4>Souvik Das</h4>
+                                     <p>Krishi Sathi has been my go-to source for all my farming needs for the past year. The team is knowledgeable and always available to offer expert advice and support. Their commitment to sustainable agriculture and clean working practices has made a noticeable difference in the health of my crops. I highly recommend Krishi Sathi to any farmer looking to improve their farming practices.</p>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="carousel-item">
+                      <div class="container">
+                         <div class="carousel-caption">
+                            <div class="row">
+                               <div class="col-md-12">
+                                  <div class="test_box">
+                                     <i><img src="/assets/home-img/profile-icon.png" height="140px" width="140px"  class="d-block w-100" alt="#"/></i>
+                                     <h4>Saurabh Kumar</h4>
+                                     <p>"I was hesitant at first to try Krishi Sathi, but I am so glad I took the chance. Their products are of the highest quality and their team is truly dedicated to helping farmers succeed. Their personalized support has made a significant impact on my farming business, and I wouldn't go anywhere else.</p>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="carousel-item">
+                      <div class="container">
+                         <div class="carousel-caption">
+                            <div class="row">
+                               <div class="col-md-12">
+                                  <div class="test_box">
+                                     <i><img src="/assets/home-img/profile-icon.png" height="140px" width="140px"  class="d-block w-100" alt="#"/></i>
+                                     <h4>Piyush Garg</h4>
+                                     <p>Krishi Sathi has been a game-changer for my farm. Their environmentally-friendly products have helped me conserve water and improve soil health, and I have seen a noticeable improvement in my crops as a result. I highly recommend Krishi Sathi to any farmer looking to make a positive impact on the environment.</p>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+
+                   <div class="carousel-item">
+                    <div class="container">
+                       <div class="carousel-caption">
+                          <div class="row">
+                             <div class="col-md-12">
+                                <div class="test_box">
+                                   <i><img src="/assets/home-img/profile-icon.png" height="140px" width="140px"  class="d-block w-100" alt="#"/></i>
+                                   <h4>Manoj Kumar</h4>
+                                   <p>Krishi Sathi's commitment to sustainability has been a major factor in my decision to use their products. Their wide range of products and expert advice has been invaluable to me, and I appreciate their personalized support and guidance</p>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+
+                 <div class="carousel-item">
+                    <div class="container">
+                       <div class="carousel-caption">
+                          <div class="row">
+                             <div class="col-md-12">
+                                <div class="test_box">
+                                   <i><img src="/assets/home-img/profile-icon.png" height="140px" width="140px"  class="d-block w-100" alt="#"/></i>
+                                   <h4>Tanay Patil</h4>
+                                   <p>I have been using Krishi Sathi's products for the past few months, and I am blown away by the positive impact they have had on my farm. Their clean working practices and commitment to sustainable agriculture has made a noticeable difference in the health of my crops and soil, and I highly recommend them to any farmer looking to improve their farming practices.</p>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+
+                 <div class="carousel-item">
+                  <div class="container">
+                     <div class="carousel-caption">
+                        <div class="row">
+                           <div class="col-md-12">
+                              <div class="test_box">
+                                 <i><img src="/assets/home-img/profile-icon.png" height="140px" width="140px"  class="d-block w-100" alt="#"/></i>
+                                 <h4>Vibhushit Tyagi</h4>
+                                 <p>Krishi Sathi has been a game-changer for my farm. Their environmentally-friendly products have helped me conserve water and improve soil health, and I have seen a noticeable improvement in my crops as a result. I highly recommend Krishi Sathi to any farmer looking to make a positive impact on the environment.</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+ <!-- end about -->

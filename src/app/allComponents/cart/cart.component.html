@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1 align="center" class="display-4 mb-5" style="color:rgb(54, 119, 37)">
+        <link rel="stylesheet" type="text/css" href="cart.component.css">
+        <img src="https://www.nicepng.com/png/detail/335-3354780_icon-02-green-shopping-cart-icon.png" width="60"
+            height="60" alt="Cart logo"> 
+        <i>Cart ({{cartItems.length}})</i>
+    </h1>
+
+    <div class="cart">
+        <table class="table table-bordered table-hover table-striped table-sm text-center">
+            <thead>
+                <tr class="bg-info text-black" style="font-size: larger;">
+                    <th scope="col">Photo</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Product Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Subtotal</th>
+                    <th scope="col">Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let item of cartItems">
+                        <a class="align-middle" routerLink="/product/{{item.productId}}"><img height="60px"
+                            src="{{item.imagePath}}"
+                            alt="{{item.productName}}"></a>
+                    <td class="align-middle"> {{item.productDescription}}</td>
+                    <td class="align-middle"> {{item.productId}}</td>
+                    <td class="align-middle"> {{item.productName}} </td> 
+                    <td class="align-middle">{{item.productPrice}} </td>
+                    <td class="align-middle">
+                        <a (click)="minusOne(item)"><i class="fa fa-minus"></i></a>
+                        <input min="1" id="{{item.productId}}" [max]="10" size="5" type="number" required name='count' [(ngModel)]="item.quantity">
+                        <a (click)="addOne(item)"> <i class="fa fa-plus"></i></a>
+                    </td>
+                    <td class="align-middle">{{item.productPrice * item.quantity | currency: 'INR'}}</td>
+                    <td class="align-middle" >
+                        <a (click)="remove(item)" routerLink="./" style="color: red;">Delete</a>
+                       
+                    </td> 
+                </tr>
+            </tbody>
+        </table>
+        <br><br><br><br><br><br><br>
+        <div class="Button" *ngIf="cartItems?.length > 0; else empty">
+            <button class="btn btn-success py-3 float-center" type="submit" style="font-size: small;" (click)="proceedToPayment() " [disabled]="!total">
+                &nbsp; &nbsp; Click here to pay &nbsp;{{total | currency: 'INR'}} &nbsp; &nbsp;
+            </button>
+        </div>
+
+        <ng-template #empty>
+            <h4 class="text-muted text-center">
+                <br><br><br><br><br><br>
+                <p><i> Cart is empty. Go to get something! :)</i></p><br><br><br><br><br><br><br>
+            </h4>
+        </ng-template>
+    </div>     
+</body>
+</html>

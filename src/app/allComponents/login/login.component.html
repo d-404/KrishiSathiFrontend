@@ -1,0 +1,118 @@
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                    class="img-fluid" alt="Sample image">
+            </div>
+
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <br><br><br>
+                <div>
+                    <label for="exampleSelect1" class="form-label mt-4">Selct User Type</label>
+                    <select class="form-select form-control-lg" name="userType" [(ngModel)]="userType">
+                        <option value="customer">Customer</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <form>
+                    <br>
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form3Example3">Email address</label>
+                        <input type="email" name="email" [(ngModel)]="email" id="form3Example3"
+                            class="form-control form-control-lg" placeholder="Enter a valid email address" />
+
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-3">
+                        <label class="form-label" for="form3Example4">Password</label>
+                        <input type="password" name="password" [(ngModel)]="password" id="form3Example4"
+                            class="form-control form-control-lg" placeholder="Enter password" />
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a class="text-body cursor-pointer" (click)="editPassword()">Forgot password?</a>
+                    </div>
+
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="button" class="btn btn-primary btn-lg"
+                            style="padding-left: 2.5rem; padding-right: 2.5rem;"
+                            (click)="verifyByPassword()">Login</button>
+                    </div>
+
+                </form>
+
+                <div *ngIf="userType == 'customer'">
+                    <div class="divider d-flex align-items-center my-4">
+                        <p class="text-center fw-bold mx-3 mb-0">Or</p>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+                        <p class="lead fw-normal mb-0 me-3">Sign in with</p>
+                        <asl-google-signin-button *ngIf="!user"></asl-google-signin-button>
+                    </div>
+                </div>
+
+                <br>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Edit Password -->
+<div class="modal" id="updatePassword" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title">Update Password</h4>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+                <label for="exampleSelect1" class="form-label mt-4">Selct User Type</label>
+                <select class="form-select form-control-lg" name="userType" [(ngModel)]="userType"
+                    [disabled]="otpStatus">
+                    <option value="customer">Customer</option>
+                    <option value="admin">Admin</option>
+                </select>
+
+                <label class="form-label" for="form3Example3">Email address</label>
+                <input type="email" name="email2" [(ngModel)]="email2" id="form3Example3" [disabled]="otpStatus"
+                    class="form-control form-control-lg" placeholder="Enter a valid email address" />
+                <button [disabled]="otpStatus" (click)="sendOtp()" class="btn btn-primary ">Send
+                    OTP</button>
+
+                <div *ngIf="!verifiedEmail">
+                    <div class="form-group" *ngIf="otpStatus">
+                        <div class="input-group has-validation">
+                            <input type="text" [(ngModel)]="userOtp" class="form-control">
+                            <button [(ngModel)]="userOtp" (click)="verifyOTP()" class="btn btn-primary ">Verify OTP
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <input type="password" name="password2" [(ngModel)]="password2" [disabled]="!verifiedEmail"
+                    class="form-control form-control-lg" placeholder="Enter New Password" />
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" (click)="updatePassword()" data-bs-dismiss="modal"
+                    [disabled]="!verifiedEmail ||password2 == '' ">Update
+                    Password</button>
+            </div>
+
+        </div>
+    </div>
+</div>
